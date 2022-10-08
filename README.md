@@ -18,7 +18,7 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
   - Refresh Token
   
   리프레시 토큰은 데이터베이스에 저장하지만 이 예제에서는 사용하지 않습니다. 액세스 토큰으로 로그인 여부를 판단하는 경우 액세스 토큰을 세션에 저장하고 만료되면 리프레시 토큰을 이용하여 재로그인 단계 없이 세션이 갱신되도록 구성할 수도 있겠습니다.
-사용자가 명시적으로 로그아웃을 하면 쿠키에 저장된 세션으르 삭제하므로 다시 로그인해야 합니다.
+사용자가 명시적으로 로그아웃을 하면 쿠키에 저장된 세션을 삭제하므로 다시 로그인해야 합니다.
 
 2. 세션 정보
 - 이 예제에서는 JWT와 유사하게 동작하는 [iron-session](https://www.npmjs.com/package/iron-session) 패키지를 사용합니다. iron-session은 서버에서 
