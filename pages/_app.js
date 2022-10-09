@@ -4,11 +4,16 @@ import Head from "next/head";
 import useUser from "../lib/useUser";
 import Context from "../lib/appContext";
 import TopMenu from "../components/topmenu";
+import useSpinner from "../lib/useSpinner";
+import Spinner from "../components/spinner";
 
 function MyApp({ Component, pageProps }) {
 
     // 페이지 요청이 들어올 때마다 쿠키에 저장된 사용자 정보를 확인한다.
     const user = useUser();
+
+    // 페이지 렌더링 전에 스피너 보여주기
+    const spinner = useSpinner();
 
     return (
       <>
@@ -22,7 +27,13 @@ function MyApp({ Component, pageProps }) {
           {/* 하위 페이지에서 사용자 정보를 참조할 필요가 있을 때 활용할 수 있도록 컨텍스트 API 로 전달 */}
           <Context.Provider value={user}>
               <TopMenu/>
-              <Component {...pageProps} />
+              {
+                  spinner
+                      ?
+                      <Spinner/>
+                      :
+                      <Component {...pageProps} />
+              }
           </Context.Provider>
       </>
     )
