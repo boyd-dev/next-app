@@ -11,7 +11,7 @@ export default function SideMenu({flag, toggleDrawer}) {
 
     return (
         <Drawer anchor="left" open={flag} onClose={toggleDrawer(false)}>
-            <Box sx={{width: "250px"}} component="nav" onClick={toggleDrawer(false)}>
+            <Box sx={{width: "16rem"}} component="nav" onClick={toggleDrawer(false)}>
                 <List>
                     <Link href="/">
                         <ListItemButton key="0">
